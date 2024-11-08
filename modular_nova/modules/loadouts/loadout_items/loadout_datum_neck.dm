@@ -8,9 +8,9 @@
 		return TRUE
 
 /datum/loadout_item/neck/insert_path_into_outfit(datum/outfit/outfit, mob/living/carbon/human/equipper, visuals_only = FALSE, override_items = LOADOUT_OVERRIDE_BACKPACK)
-	if(override_items == LOADOUT_OVERRIDE_BACKPACK)
+	if(override_items == LOADOUT_OVERRIDE_BACKPACK && !visuals_only)
 		if(outfit.neck)
-			LAZYADD(outfit.backpack_contents, outfit.neck && !visuals_only)
+			LAZYADD(outfit.backpack_contents, outfit.neck)
 		outfit.neck = item_path
 	else
 		outfit.neck = item_path
@@ -225,6 +225,10 @@
 	name = "Mantle"
 	item_path = /obj/item/clothing/neck/mantle
 
+/datum/loadout_item/neck/tesharian_mantle
+	name = "Tesharian Mantle"
+	item_path = /obj/item/clothing/neck/tesharian_mantle
+
 /datum/loadout_item/neck/mantle_qm
 	name = "Quartermaster's Mantle"
 	item_path = /obj/item/clothing/neck/mantle/qm
@@ -286,6 +290,10 @@
 /datum/loadout_item/neck/maid
 	name = "Maid Neck Cover"
 	item_path = /obj/item/clothing/neck/maid
+
+/datum/loadout_item/neck/colonial_cloak
+	name = "Colonial Cloak"
+	item_path = /obj/item/clothing/neck/cloak/colonial
 
 /datum/loadout_item/neck/imperial_police_cloak
 	name = "Imperial Police Cloak"

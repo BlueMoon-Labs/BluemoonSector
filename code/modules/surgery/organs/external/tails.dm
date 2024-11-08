@@ -168,9 +168,6 @@
 
 	wag_flags = WAG_ABLE
 
-/datum/bodypart_overlay/mutant/tail/get_global_feature_list()
-	return SSaccessories.sprite_accessories["tail"] // NOVA EDIT CHANGE - ORIGINAL: return SSaccessories.tails_list_human
-
 /obj/item/organ/external/tail/cat/get_butt_sprite()
 	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
 
@@ -179,14 +176,16 @@
 	feature_key = "tail" // NOVA EDIT - Customization - ORIGINAL: feature_key = "tail_cat"
 	// color_source = ORGAN_COLOR_HAIR // NOVA EDIT REMOVAL
 
+/datum/bodypart_overlay/mutant/tail/cat/get_global_feature_list()
+	return SSaccessories.sprite_accessories["tail"] // NOVA EDIT CHANGE - ORIGINAL: return SSaccessories.tails_list_felinid
+
 /obj/item/organ/external/tail/monkey
 	name = "monkey tail"
 	preference = "feature_monkey_tail"
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/monkey
 
-	wag_flags = WAG_ABLE
-	//dna_block = DNA_MONKEY_TAIL_BLOCK NOVA EDIT REMOVAL
+	dna_block = null
 
 ///Monkey tail bodypart overlay
 /datum/bodypart_overlay/mutant/tail/monkey
